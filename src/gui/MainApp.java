@@ -38,14 +38,16 @@ public class MainApp extends Application
     private ToggleGroup tgMetode;
 
     @Override
-    public void init() {
+    public void init()
+    {
         //Controller.init();
         this.controller = Controller.getController();
         this.controller.createObjects();
     }
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage)
+    {
 
         // Set-up stage
         this.stage = stage;
@@ -63,13 +65,13 @@ public class MainApp extends Application
 
         // -------------------------
         // TEST
-//        ArrayList<Prisliste> prislister = this.controller.getAllPrislister();
-//        selectPrislisteAction(prislister.get(0));
-//        this.ordre = this.controller.getAllOrdre().get(0);
-//        this.betalAfregningAction();
-//
-//        this.paaBeloebetAction();
-//        this.udfoerBetalingAction();
+        //ArrayList<Prisliste> prislister = this.controller.getAllPrislister();
+        //selectPrislisteAction(prislister.get(0));
+        //this.ordre = this.controller.getAllOrdre().get(0);
+        //this.betalAfregningAction();
+        //
+        //this.paaBeloebetAction();
+        //this.udfoerBetalingAction();
         // --------------------------
 
     }
@@ -95,6 +97,7 @@ public class MainApp extends Application
         this.stage.show();
         this.forceWindowRefresh();
     }
+
 
     // --- Scene: Prisliste --------------------------------------------------------------------------------------------
 
@@ -124,6 +127,7 @@ public class MainApp extends Application
         RowConstraints row2 = new RowConstraints();
         row1.setVgrow(Priority.NEVER);
         row2.setVgrow(Priority.ALWAYS);
+
         pane.getRowConstraints().addAll(row1, row2);
         
         // --- Options button ---
@@ -495,13 +499,13 @@ public class MainApp extends Application
 
 
         if (this.ordre.getOrdrelinjer().size() > 0) {
-        ScrollPane sp = new ScrollPane();
-        sp.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        sp.setFitToWidth(true);
-        sp.setFitToHeight(true);
-        sp.getStyleClass().add("scrollPaneOrdrelinjer");
-        paneOrdrelinjerContainer.add(sp, 0, 0);
+            ScrollPane sp = new ScrollPane();
+            sp.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+            sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+            sp.setFitToWidth(true);
+            sp.setFitToHeight(true);
+            sp.getStyleClass().add("scrollPaneOrdrelinjer");
+            paneOrdrelinjerContainer.add(sp, 0, 0);
 
             GridPane paneOrdrelinjer = new GridPane();
             paneOrdrelinjer.setGridLinesVisible(false);
